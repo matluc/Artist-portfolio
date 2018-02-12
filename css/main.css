@@ -263,24 +263,32 @@ template {
   display: none; }
 
 body {
-  color: #e8e9eb;
+  color: #a7a7a7;
   font-family: "Merriweather", serif;
   line-height: 1.6;
   background: #ffffff; }
+
+h1, h2, p {
+  margin-top: 0;
+  margin-bottom: 1em; }
 
 h1 {
   color: #03afc2;
   line-height: 1;
   font-size: 3.125rem; }
   h1 span {
-    color: #03afc2;
-    font-family: "Six Caps", sans-serif;
-    display: block;
     font-size: 5.5rem;
-    letter-spacing: 10px; }
+    letter-spacing: 0.3em;
+    color: #03afc2;
+    text-transform: uppercase;
+    line-height: 1;
+    font-family: "Six Caps", sans-serif;
+    display: block; }
 
 h2 {
   font-size: 2rem;
-  letter-spacing: 10px;
+  letter-spacing: 0.3em;
   color: #606060;
-  line-height: 1; }
+  text-transform: uppercase;
+  line-height: 1;
+  font-family: "Six Caps", sans-serif; }
