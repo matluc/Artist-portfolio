@@ -2,6 +2,7 @@
   @include container;
   @include clearfix;
   margin-top: 3em;
+  margin-bottom: 5em;
 }
 
 .about-img {
@@ -23,7 +24,7 @@
 
 @supports (display: grid) {
   .about-me {
-    // display: grid;
+    display: grid;
     grid-template-columns: [port-start] minmax(6em, 1fr) [name-start] minmax(6em, 1fr) [img-end] 2fr [port-end];
   }
 
