@@ -27,14 +27,15 @@
     bottom: 0;
     right: 0;
     left: 0;
-    padding: 2em 1.5em 1em;
-    background: rgba($accent, .5);
+    padding: 1em;
+    background: rgba($accent, .75);
     color: $white;
     text-align: left;
     display: flex;
     flex-direction: column;
     transition: top ease-in-out 250ms;
   } 
+
   &:hover figcaption,
   &:focus figcaption {
     top: 0;
@@ -54,10 +55,11 @@
 .portfolio-link {
   color: $white;
   font-weight: $fw-b;
-  font-size: .9rem;
+  font-size: 1.1rem;
   text-decoration: none;
-  border-bottom: 2px solid $white;
+  border-bottom: 3px solid $white;
   align-self: flex-start;
+  
   &::after {
     content: url(../img/arrow-white.svg);
     display: inline-block;
@@ -71,11 +73,14 @@
   .portfolio-items {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    @include mq {
+      grid-template-columns: repeat(4, 1fr);
+    }
   }
 
   .portfolio-item.featured {
     grid-column: 1 / span 2;
-    grid-row:  1 / span2;
+    grid-row:  1 / span 2;
   }
 
   .featured {

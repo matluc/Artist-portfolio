@@ -267,6 +267,9 @@ body {
   font-family: "Merriweather", serif;
   line-height: 1.6;
   background: #ffffff; }
+  @media (min-width: 50em) {
+    body {
+      font-size: 1.125rem; } }
 
 img {
   max-width: 100%; }
@@ -279,6 +282,9 @@ h1 {
   color: #03afc2;
   line-height: 1;
   font-size: 3.125rem; }
+  @media (min-width: 50em) {
+    h1 {
+      font-size: 4.25rem; } }
 
 h2 {
   font-size: 2rem;
@@ -288,6 +294,9 @@ h2 {
   line-height: 1;
   font-family: "Six Caps", sans-serif;
   font-weight: 400; }
+  @media (min-width: 50em) {
+    h2 {
+      font-size: 3rem; } }
 
 .welcome {
   background-image: url(../img/header-bg.png);
@@ -303,16 +312,9 @@ h2 {
     color: #606060;
     line-height: 2;
     text-align: center; }
-    .welcome h1::before, .welcome h1::after {
-      content: '';
-      display: block;
-      width: 60%;
-      height: 1px;
-      background: #223843; }
-    .welcome h1::before {
-      margin: 0 auto 2em; }
-    .welcome h1::after {
-      margin: 2em auto 0; }
+    @media (min-width: 50em) {
+      .welcome h1 {
+        font-size: 3vw; } }
     .welcome h1 span {
       font-size: 5.5rem;
       letter-spacing: 0.15em;
@@ -323,6 +325,19 @@ h2 {
       font-weight: 400;
       display: block;
       margin-right: -.15em; }
+      @media (min-width: 50em) {
+        .welcome h1 span {
+          font-size: 10vw; } }
+    .welcome h1::before, .welcome h1::after {
+      content: '';
+      display: block;
+      width: 60%;
+      height: 1px;
+      background: #223843; }
+    .welcome h1::before {
+      margin: 0 auto 2em; }
+    .welcome h1::after {
+      margin: 2em auto 0; }
 
 .intro {
   display: flex;
@@ -387,13 +402,23 @@ h2 {
   .about-img {
     grid-column: port / img;
     grid-row: 1 / 2; }
+    @media (min-width: 50em) {
+      .about-img {
+        grid-row: 1 / 4; } }
   .about-title {
     grid-column: name / port;
     grid-row: 1 / 2;
     align-self: end; }
+    @media (min-width: 50em) {
+      .about-title {
+        margin-top: .25em; } }
   .about-subtitle,
   .about-text {
-    grid-column: port / port; } }
+    grid-column: port / port; }
+    @media (min-width: 50em) {
+      .about-subtitle,
+      .about-text {
+        grid-column: img-end / port-end; } } }
 
 .portfolio {
   text-align: center;
@@ -420,8 +445,8 @@ h2 {
     bottom: 0;
     right: 0;
     left: 0;
-    padding: 2em 1.5em 1em;
-    background: rgba(3, 175, 194, 0.5);
+    padding: 1em;
+    background: rgba(3, 175, 194, 0.75);
     color: #ffffff;
     text-align: left;
     display: flex;
@@ -442,9 +467,9 @@ h2 {
 .portfolio-link {
   color: #ffffff;
   font-weight: 900;
-  font-size: .9rem;
+  font-size: 1.1rem;
   text-decoration: none;
-  border-bottom: 2px solid #ffffff;
+  border-bottom: 3px solid #ffffff;
   align-self: flex-start; }
   .portfolio-link::after {
     content: url(../img/arrow-white.svg);
@@ -457,9 +482,12 @@ h2 {
   .portfolio-items {
     display: grid;
     grid-template-columns: repeat(2, 1fr); }
+    @media (min-width: 50em) {
+      .portfolio-items {
+        grid-template-columns: repeat(4, 1fr); } }
   .portfolio-item.featured {
     grid-column: 1 / span 2;
-    grid-row: 1 / span2; }
+    grid-row: 1 / span 2; }
   .featured .portfolio-title {
     font-size: 5rem; }
   .featured .portfolio-desc {
@@ -476,6 +504,23 @@ h2 {
 form {
   display: flex;
   flex-direction: column; }
+  @supports (display: grid) {
+    @media (min-width: 50em) {
+      form {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-column-gap: 1em;
+        grid-template-areas: "name    email" "message message" "   .    button"; }
+        form .name {
+          grid-area: name; }
+        form .email {
+          grid-area: email; }
+        form .message {
+          grid-area: message; }
+          form .message textarea {
+            height: 10em; }
+        form .button {
+          grid-area: button; } } }
 
 label {
   display: block;
@@ -488,6 +533,7 @@ textarea {
   display: block;
   padding: .75em;
   width: 100%;
+  min-width: 15em;
   background: #f6f6f7;
   border: 1px solid #e8e9eb;
   font-size: 1.2rem; }
@@ -495,6 +541,7 @@ textarea {
 .button {
   display: inline-block;
   width: auto;
+  min-width: auto;
   margin-top: 1em;
   margin-left: auto;
   background: #03afc2;
