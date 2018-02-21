@@ -266,7 +266,9 @@ body {
   color: #a7a7a7;
   font-family: "Merriweather", serif;
   line-height: 1.6;
-  background: #ffffff; }
+  background: #ffffff;
+  font-size: .875rem;
+  overflow-x: hidden; }
   @media (min-width: 50em) {
     body {
       font-size: 1.125rem; } }
@@ -305,7 +307,8 @@ h2 {
   height: 100vh;
   display: flex;
   align-items: center;
-  justify-content: center; }
+  justify-content: center;
+  position: relative; }
   .welcome h1 {
     font-size: 1.5rem;
     font-weight: 400;
@@ -533,7 +536,6 @@ textarea {
   display: block;
   padding: .75em;
   width: 100%;
-  min-width: 15em;
   background: #f6f6f7;
   border: 1px solid #e8e9eb;
   font-size: 1.2rem; }
@@ -541,7 +543,6 @@ textarea {
 .button {
   display: inline-block;
   width: auto;
-  min-width: auto;
   margin-top: 1em;
   margin-left: auto;
   background: #03afc2;
@@ -579,3 +580,77 @@ footer {
   background: rgba(255, 255, 255, 0.15);
   width: 25%;
   margin: 4em auto; }
+
+.menu-button {
+  position: absolute;
+  top: 3em;
+  left: 3em;
+  background: transparent;
+  border: 0;
+  transition: transform ease-in-out 250ms;
+  cursor: pointer; }
+
+nav {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 20%;
+  z-index: 2;
+  transform: translateX(-100%);
+  transition: transform ease-out 250ms; }
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: space-around;
+  align-items: stretch;
+  background: #03afc2; }
+
+nav li {
+  text-align: center; }
+  nav li:not(:last-child) {
+    border-bottom: 1px solid #223843; }
+
+nav li:hover,
+nav li:focus {
+  background: rgba(34, 56, 67, 0.5); }
+
+nav a {
+  display: inline-block;
+  font-size: 4rem;
+  letter-spacing: 0.15em;
+  color: #223843;
+  text-transform: uppercase;
+  line-height: 1;
+  font-family: "Six Caps", sans-serif;
+  font-weight: 400;
+  text-decoration: none;
+  padding: calc(100vh/8) 0;
+  line-height: 0;
+  width: 100%; }
+
+.close-icon {
+  display: none; }
+
+.nav-is-open {
+  height: 100vh;
+  overflow-y: hidden; }
+  .nav-is-open nav {
+    transform: translateX(0); }
+  .nav-is-open .container-all {
+    transform: translateX(80%); }
+  .nav-is-open .close-icon {
+    display: block; }
+  .nav-is-open .hamburger {
+    display: none; }
+  .nav-is-open .menu-button {
+    transform: translateX(-70%); }
+
+.container-all {
+  transition: transform ease-out 250ms;
+  -webkit-transform: translateZ(0); }
