@@ -159,7 +159,7 @@
   background: rgba($accent, .75);
   padding: 3em 0 3em 3em;
   color: $white;
-  width: 70%;
+  width: 60%;
 
   .portfolio-title {
     font-size: 3.5rem;
@@ -172,6 +172,9 @@
       background: $white;
       margin: .5em 0;
       width: 100%;
+      @media (max-width: 30em) {
+        width: 60%;
+      }
     }
   }
 }

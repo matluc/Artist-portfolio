@@ -551,7 +551,7 @@ h2 {
   background: rgba(3, 175, 194, 0.75);
   padding: 3em 0 3em 3em;
   color: #ffffff;
-  width: 70%; }
+  width: 60%; }
   .portfolio-title-box .portfolio-title {
     font-size: 3.5rem;
     display: inline-block; }
@@ -562,6 +562,9 @@ h2 {
       background: #ffffff;
       margin: .5em 0;
       width: 100%; }
+      @media (max-width: 30em) {
+        .portfolio-title-box .portfolio-title::after {
+          width: 60%; } }
 
 .portfolio-subtitle {
   font-size: 1rem; }
